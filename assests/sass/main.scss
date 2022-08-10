@@ -200,7 +200,29 @@ header {
     }
     p {
       font-size: 1.2rem;
+      margin: 10px 0 0 0;
     }
+  }
+  .arrow {
+    color: $white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    &:hover {
+      i {
+        transform: translateY(0.7rem);
+        transition: all 0.7s;
+      }
+    }
+  }
+  .left-arrow {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+  }
+  .right-arrow {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
   }
 }
 

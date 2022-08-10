@@ -188,6 +188,26 @@ header nav button:hover i {
 }
 .landing-page .landing-text p {
   font-size: 1.2rem;
+  margin: 10px 0 0 0;
+}
+.landing-page .arrow {
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.landing-page .arrow:hover i {
+  transform: translateY(0.7rem);
+  transition: all 0.7s;
+}
+.landing-page .left-arrow {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+}
+.landing-page .right-arrow {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
 }
 
 .info-page {
