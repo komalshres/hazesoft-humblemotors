@@ -1,18 +1,14 @@
-@import "var.scss";
+@import "variables";
 
 @font-face {
   font-family: Sohen;
   src: url(/assests/fonts/TestSöhneBreit.otf);
 }
-@font-face {
-  font-family: Riforma;
-  src: url(/assests/fonts/riforma.otf);
-}
 
 * {
   margin: 0;
   padding: 0;
-  font-family: Sohen;
+  font-family: Sohen, sans-serif;
 }
 html {
   font-size: 16px;
@@ -49,13 +45,13 @@ html {
 //     top:0;
 //     width: 100vw;
 //     height:100vh;
-//     background-color: #000;
+//     background-color: $black;
 //     opacity: 0.3;
 // }
 
 // .black_nav {
-//   color: #000;
-//   border-color: #000;
+//   color: $black;
+//   border-color: $black;
 // }
 
 header {
@@ -189,7 +185,6 @@ header {
     align-items: center;
     justify-content: center;
     .info-arc {
-      font-family: Sohen;
       $width: 50rem;
       $height: calc($width/2);
       width: $width;
@@ -213,14 +208,12 @@ header {
         font-size: 1.6rem;
       }
       @media (max-width: 420px) {
-        & {
-          $widthMobile: calc(100vw - 50px);
-          $heightMobile: calc($widthMobile/2);
-          width: $widthMobile;
-          height: $heightMobile;
-          border-top-left-radius: $heightMobile;
-          border-top-right-radius: $heightMobile;
-        }
+        $widthMobile: calc(100vw - 50px);
+        $heightMobile: calc($widthMobile/2);
+        width: $widthMobile;
+        height: $heightMobile;
+        border-top-left-radius: $heightMobile;
+        border-top-right-radius: $heightMobile;
       }
     }
   }
@@ -255,10 +248,10 @@ header {
       height: $height;
       border-top-left-radius: $height;
       border-top-right-radius: $height;
-      color: #000;
+      color: $black;
       font-size: 1.5rem;
       font-weight: 900;
-      border: 0.3rem solid #000;
+      border: 0.3rem solid $black;
       border-bottom: 0;
       display: flex;
       text-align: center;
@@ -269,7 +262,7 @@ header {
       margin-top: 0;
     }
   }
-  h1 {
+  h2 {
     font-size: 9rem;
   }
 }
@@ -292,6 +285,7 @@ header {
       letter-spacing: 0.1rem;
       left: 20%;
       bottom: 5%;
+      text-transform: uppercase;
     }
   }
   .intro-one__img {
@@ -310,6 +304,7 @@ header {
       letter-spacing: 0.1rem;
       left: 20%;
       bottom: 5%;
+      text-transform: uppercase;
     }
   }
   img {
@@ -325,6 +320,9 @@ header {
 .intro-two {
   @include f-center;
   height: 100vh;
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
   .intro-two__img {
     @include f-center;
     flex-direction: column;
@@ -349,10 +347,16 @@ header {
     font-size: 1.8rem;
     h2 {
       margin: 0 20%;
-      color: #75a4cc;
+      color: $secondary_color;
     }
     p {
       margin: 0 20%;
     }
+  }
+}
+.our_vision {
+  height: 100vh;
+  img {
+    object-fit: cover;
   }
 }
