@@ -78,8 +78,27 @@ header nav li {
   margin-right: 5rem;
   letter-spacing: 0.1rem;
 }
+header nav li a {
+  text-decoration: none;
+  color: #fff;
+}
+header nav li a:hover {
+  color: #fff;
+}
+header nav li a:hover:after {
+  transform: scaleX(1);
+}
+header nav li a:after {
+  display: block;
+  content: "";
+  border-bottom: solid 2px #fff;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transform-origin: 0% 50%;
+}
 header nav li:first-of-type {
-  border-bottom: 1.5px solid #fff;
+  border-bottom: 2px solid #fff;
 }
 @media (max-width: 420px) {
   header nav li:first-of-type {
@@ -142,6 +161,7 @@ header nav button:hover i {
 .landing-page {
   background-image: url("/assests/img/hero1.jpg");
   height: 100vh;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,6 +175,19 @@ header nav button:hover i {
     position: absolute;
     top: 20%;
   }
+}
+.landing-page .landing-text {
+  position: absolute;
+  bottom: 10%;
+  color: #fff61a;
+  text-align: center;
+  text-transform: uppercase;
+}
+.landing-page .landing-text h1 {
+  font-size: 8rem;
+}
+.landing-page .landing-text p {
+  font-size: 1.2rem;
 }
 
 .info-page {
@@ -189,7 +222,7 @@ header nav button:hover i {
   box-sizing: border-box;
   text-transform: uppercase;
 }
-.info-page .info .info-arc h1 {
+.info-page .info .info-arc h2 {
   font-size: 0.8rem;
 }
 .info-page .info .info-arc div {
