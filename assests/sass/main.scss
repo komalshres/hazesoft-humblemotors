@@ -1,0 +1,358 @@
+@import "var.scss";
+
+@font-face {
+  font-family: Sohen;
+  src: url(/assests/fonts/TestSöhneBreit.otf);
+}
+@font-face {
+  font-family: Riforma;
+  src: url(/assests/fonts/riforma.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Sohen;
+}
+html {
+  font-size: 16px;
+  @media (max-width: 1440px) {
+    font-size: 85%;
+  }
+  @media (max-width: 1200px) {
+    font-size: 75%;
+  }
+  @media (max-width: 998px) {
+    font-size: 67%;
+  }
+  @media (max-width: 768px) {
+    font-size: 55%;
+  }
+  @media (max-width: 640px) {
+    font-size: 45%;
+  }
+}
+
+@mixin create-flex($align: center, $justify: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin f-center() {
+  @include create-flex;
+}
+
+// .overlay{
+//     position: fixed;
+//     left:0;
+//     top:0;
+//     width: 100vw;
+//     height:100vh;
+//     background-color: #000;
+//     opacity: 0.3;
+// }
+
+// .black_nav {
+//   color: #000;
+//   border-color: #000;
+// }
+
+header {
+  position: fixed;
+  width: 100%;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 20;
+  @media (max-width: 420px) {
+    & {
+      padding: 0 0 0 5rem;
+      justify-content: space-between;
+    }
+  }
+  .logo {
+    svg {
+      fill: #fff;
+      width: 9.4rem;
+      height: 5rem;
+      @media (max-width: 420px) {
+        & {
+          width: 120px;
+          height: 50px;
+        }
+      }
+    }
+  }
+  nav {
+    @include f-center;
+    color: #fff;
+    margin-bottom: 0;
+    li {
+      list-style: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-right: 5rem;
+      letter-spacing: 0.1rem;
+      &:first-of-type {
+        border-bottom: 1.5px solid #fff;
+        @media (max-width: 420px) {
+          & {
+            display: none;
+          }
+        }
+      }
+      @media (max-width: 420px) {
+        & {
+          font-size: 1rem;
+          font-weight: 900;
+          margin-right: 2rem;
+        }
+      }
+    }
+    button {
+      @include f-center;
+      height: 100%;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background-color: $primary_color;
+      text-transform: uppercase;
+      border: none;
+      letter-spacing: 0.1rem;
+      padding: 0 3rem;
+      border-radius: 0 0 0.3rem 0.3rem;
+      p {
+        margin: 0;
+        padding-right: 1.5rem;
+        &::after {
+          content: " YOURS";
+          @media (max-width: 420px) {
+            display: none;
+          }
+        }
+      }
+      i {
+        font-size: 1.5rem;
+        @media (max-width: 420px) {
+          display: none !important;
+        }
+      }
+      &:hover {
+        i {
+          transform: translateX(0.7rem);
+          transition: all 0.7s;
+        }
+      }
+
+      @media (max-width: 420px) {
+        font-size: 1rem;
+        // width: 30rem;
+        font-weight: 900;
+        border-radius: 0 0 2rem 2rem;
+      }
+    }
+  }
+}
+
+// HERO SECTION
+
+.landing-page {
+  background-image: url("/assests/img/hero1.jpg");
+  height: 100vh;
+  @include f-center;
+  img {
+    width: 50vw;
+    @media (max-width: 420px) {
+      & {
+        width: 100vw;
+        position: absolute;
+        top: 20%;
+      }
+    }
+  }
+}
+
+//INFO Page
+
+.info-page {
+  @include f-center;
+  background-image: url("/assests/img/feature-2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw 200vh;
+  flex-direction: column;
+  height: 200vh;
+  text-align: center;
+  .info {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .info-arc {
+      font-family: Sohen;
+      $width: 50rem;
+      $height: calc($width/2);
+      width: $width;
+      height: $height;
+      border-top-left-radius: $height;
+      border-top-right-radius: $height;
+      color: $primary_color;
+      border: 0.625rem solid $primary_color;
+      border-bottom: 0;
+      display: flex;
+      text-align: center;
+      justify-content: flex-end;
+      flex-direction: column;
+      box-sizing: border-box;
+      text-transform: uppercase;
+      h1 {
+        font-size: 0.8rem;
+      }
+      div {
+        margin-top: 1rem;
+        font-size: 1.6rem;
+      }
+      @media (max-width: 420px) {
+        & {
+          $widthMobile: calc(100vw - 50px);
+          $heightMobile: calc($widthMobile/2);
+          width: $widthMobile;
+          height: $heightMobile;
+          border-top-left-radius: $heightMobile;
+          border-top-right-radius: $heightMobile;
+        }
+      }
+    }
+  }
+  .car-img {
+    @include f-center;
+    height: 100vh;
+    img {
+      width: calc(100vw - 10%);
+    }
+  }
+}
+
+.detail-page {
+  @include f-center;
+  height: 100vh;
+  background-color: $primary_color;
+  text-transform: uppercase;
+  text-align: center;
+  .timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 0.8rem;
+      margin-right: 2rem;
+      margin-top: 1rem;
+    }
+    .timer-arc {
+      $width: 10rem;
+      $height: calc($width/2);
+      width: $width;
+      height: $height;
+      border-top-left-radius: $height;
+      border-top-right-radius: $height;
+      color: #000;
+      font-size: 1.5rem;
+      font-weight: 900;
+      border: 0.3rem solid #000;
+      border-bottom: 0;
+      display: flex;
+      text-align: center;
+      line-height: 5rem;
+      flex-direction: column;
+      box-sizing: border-box;
+      text-transform: uppercase;
+      margin-top: 0;
+    }
+  }
+  h1 {
+    font-size: 9rem;
+  }
+}
+
+//Intro One
+.intro-one {
+  display: flex;
+  height: 100vh;
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+  .intro-one__text {
+    @include f-center;
+    position: relative;
+    flex-direction: column;
+    flex: 1;
+    p {
+      position: absolute;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      left: 20%;
+      bottom: 5%;
+    }
+  }
+  .intro-one__img {
+    @include f-center;
+    position: relative;
+    flex-direction: column;
+    flex: 1;
+    &:last-of-type {
+      background-image: url("/assests/img/feature-2.jpg");
+      background-repeat: no-repeat;
+      background-size: 100vw 100vh;
+    }
+    p {
+      position: absolute;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      left: 20%;
+      bottom: 5%;
+    }
+  }
+  img {
+    width: 60%;
+    height: 30vw;
+    object-fit: cover;
+    border-radius: 0.5%;
+    @media (max-width: 640px) {
+      height: 60vw;
+    }
+  }
+}
+.intro-two {
+  @include f-center;
+  height: 100vh;
+  .intro-two__img {
+    @include f-center;
+    flex-direction: column;
+    flex: 1;
+    figure {
+      width: 80%;
+      img {
+        width: 100%;
+        height: 70vh;
+        border-radius: 2px;
+        object-fit: cover;
+      }
+      figcaption {
+        font-size: 8px;
+      }
+    }
+  }
+
+  .intro-two__text {
+    flex-direction: column;
+    flex: 1;
+    font-size: 1.8rem;
+    h2 {
+      margin: 0 20%;
+      color: #75a4cc;
+    }
+    p {
+      margin: 0 20%;
+    }
+  }
+}
